@@ -10,7 +10,7 @@ import Homepage from '../screen/Homepage';
 import Bankpayment from '../screen/Bankpayment';
 import Cartpage from '../screen/Cartpage';
 import Congratspage from '../screen/Congratspage';
-import Editprofilepage from '../screen/Editprofilepage';
+import EditProfilepage from '../screen/Editprofilepage';
 import History from '../screen/History';
 import Orderpage from '../screen/Orderpage';
 import Login from '../screen/Login';
@@ -38,7 +38,7 @@ const AppNavigation = () => {
                 <Stack.Screen name={"History"} component={History} />
                 <Stack.Screen name={"Login"} component={Login} />
                 <Stack.Screen name={"Orderpage"} component={Orderpage} />
-                <Stack.Screen name={"Editprofilepage"} component={Editprofilepage} />
+                <Stack.Screen name={"EditProfilepage"} component={EditProfilepage} />
                 <Stack.Screen name={"Bankpayment"} component={Bankpayment} />
                 <Stack.Screen name={"Signup"} component={Signup} />
                 <Stack.Screen name={"Homepage"} component={Homepage} />

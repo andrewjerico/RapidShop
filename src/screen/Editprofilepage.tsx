@@ -1,27 +1,23 @@
 import React from "react";
-import {View,Text,Image,TextInput, StyleSheet, Pressable, Linking, TouchableOpacity} from "react-native";
+import {View,Text,Image,TextInput, StyleSheet, Pressable, Linking} from "react-native";
 import { 
-  NavigationContainer , useNavigation 
+  NavigationContainer 
 } from '@react-navigation/native';
 import home from  './../image/home.png';
 import time from  './../image//time.png';
 import prof from  './../image/blueProf.png';
 import avatar from  './../image/avatar.png';
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../navigation/RootStackParamList";
 
 
 const EditProfilepage = () => {
-  const navigationp = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Profilepage'>>();
+
   return(
     <View style={styles.home}>
       <View style={styles.bg}>
         <View style={styles.atas}>
-        <TouchableOpacity onPress={() => {navigationp.navigate("Profilepage")}}>
         <Text style={styles.back}>Back</Text>
-        </TouchableOpacity>
         <Text style={styles.profile}>Profile</Text>
-        {/* <Text style={styles.logout}>Logout</Text> */}
+        <Text style={styles.logout}>Logout</Text>
         </View>
         <View style={styles.isi}>
           <Text style={styles.userid}>USER ID : 973642</Text>
@@ -51,21 +47,19 @@ const EditProfilepage = () => {
         </View>
 
       </View>
-      <TouchableOpacity style={styles.but} onPress={() => {navigationp.navigate("Profilepage")}}>
-      <Text style={styles.save}>Save</Text>
-      </TouchableOpacity>
+      <Button></Button>
     </View>
   );
 };
 
-// function Button(props) {
-//   const { onPress, title = 'Save' } = props;
-//   return (
-//     <Pressable style={styles.but} onPress={onPress}>
-//       <Text style={styles.save}>{title}</Text>
-//     </Pressable>
-//   );
-// }
+function Button(props) {
+  const { onPress, title = 'Save' } = props;
+  return (
+    <Pressable style={styles.but} onPress={onPress}>
+      <Text style={styles.save}>{title}</Text>
+    </Pressable>
+  );
+}
 
 const styles = StyleSheet.create({
   home :{
