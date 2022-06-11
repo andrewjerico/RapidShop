@@ -20,6 +20,9 @@ import { RootStackParamList } from "../navigation/RootStackParamList";
 const Sayurpage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Orderpage'>>();
   const navigationh = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Homepage'>>();
+  const navigationc = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Cartpage'>>();
+  const navigationp = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Profilepage'>>();
+  const navigationt = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Timelinepage'>>();
   return(
     <View style={styles.home}>
       <View style={styles.atas}>
@@ -27,7 +30,9 @@ const Sayurpage = () => {
         <Text style={styles.back}>Back</Text>
         </TouchableOpacity>
         <TextInput style={styles.box} placeholder ="Search"></TextInput>
+        <TouchableOpacity onPress={() => {navigationc.navigate("Cartpage")}}>
         <Image source={cart} style={styles.cart}></Image>
+        </TouchableOpacity>
       </View>
       <View style={styles.baris}>
         <View>
@@ -65,9 +70,15 @@ const Sayurpage = () => {
       </View>
 
       <View style={styles.foot}>
-        <Image source={home} style={styles.homes}></Image>
+      <TouchableOpacity onPress={() => {navigationh.navigate("Homepage")}}>
+      <Image source={home} style={styles.homes}></Image>
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => {navigationt.navigate("Timelinepage")}}>
         <Image source={time}></Image>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {navigationp.navigate("Profilepage")}}>
         <Image source={prof}></Image>
+        </TouchableOpacity>
       </View>
 
     </View>

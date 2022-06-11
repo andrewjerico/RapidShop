@@ -1,24 +1,29 @@
 import React from "react";
-import {View,Text,Image,TextInput, StyleSheet, Pressable, Linking} from "react-native";
+import {View,Text,Image,TextInput, StyleSheet, Pressable, Linking, TouchableOpacity} from "react-native";
 import { 
-  NavigationContainer 
+  NavigationContainer , useNavigation 
 } from '@react-navigation/native';
 import trumpet from  './../image/trumpets.png';
-
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/RootStackParamList";
 
 const Congratspage = () => {
-
+  const navigationt = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Timelinepage'>>();
   return(
     <View style={styles.home}>
       <View style={styles.atas}>
+      <TouchableOpacity onPress={() => {navigationt.navigate("Timelinepage")}}>
         <Text style={styles.back}>Back</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.main}>
         <Image source={trumpet}></Image>
         <Text style={styles.congs}>Congratulations!</Text>
         <Text style={styles.txt}>Your order is now confirm!</Text>
         <Text style={styles.txt}>Please wait for your order to arrive</Text>
-        <Button></Button>
+        <TouchableOpacity style={styles.but} onPress={() => {navigationt.navigate("Timelinepage")}}>
+        <Text style={styles.sigin}>Ok</Text>
+        </TouchableOpacity>
       </View>
 
     </View>
@@ -26,14 +31,14 @@ const Congratspage = () => {
 };
 
 
-function Button(props) {
-  const { onPress, title = 'Ok' } = props;
-  return (
-    <Pressable style={styles.but} onPress={onPress}>
-      <Text style={styles.sigin}>{title}</Text>
-    </Pressable>
-  );
-}
+// function Button(props) {
+//   const { onPress, title = 'Ok' } = props;
+//   return (
+//     <Pressable style={styles.but} onPress={onPress}>
+//       <Text style={styles.sigin}>{title}</Text>
+//     </Pressable>
+//   );
+// }
 
 const styles = StyleSheet.create({
   home :{

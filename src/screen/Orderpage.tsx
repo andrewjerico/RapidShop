@@ -9,6 +9,7 @@ import { RootStackParamList } from "../navigation/RootStackParamList";
 
 const Orderpage = () => {
   const navigations = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Sayurpage'>>();
+  const navigationh = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Homepage'>>();
   return(
     <View style={styles.home}>
        <View style={styles.atas}>
@@ -29,7 +30,9 @@ const Orderpage = () => {
             <Button></Button>
         </View>
       </View>
-      <Buttons></Buttons>
+      <TouchableOpacity style={styles.buts} onPress={() => {navigationh.navigate("Homepage")}}>
+      <Text style={styles.saves}>Add To Cart</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -52,14 +55,6 @@ function Buttone(props) {
   );
 }
 
-function Buttons(props) {
-  const { onPress, title = 'Add To Cart' } = props;
-  return (
-    <Pressable style={styles.buts} onPress={onPress}>
-      <Text style={styles.saves}>{title}</Text>
-    </Pressable>
-  );
-}
 
 const styles = StyleSheet.create({
   home :{

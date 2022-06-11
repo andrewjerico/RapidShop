@@ -6,7 +6,7 @@ export type RootStackParamList = {
     Bankpayment: undefined
     Cartpage: undefined
     Congratspage: undefined
-    EditProfilepage: undefined
+    Editprofilepage: undefined
     History: undefined
     Login: undefined
     Orderpage: undefined
